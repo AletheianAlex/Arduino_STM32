@@ -40,10 +40,8 @@
  */
 #include <stdlib.h>
 #include <stdio.h>
-
-
+#include <stdbool.h>
 #include <string.h>
-
 #include <WString.h>
 #include <avr/dtostrf.h>
 #include <avr/pgmspace.h>
@@ -55,36 +53,35 @@
 #include <io.h>
 #include <bit_constants.h>
 #include <pwm.h>
-#include <ext_interrupts.h>
 #include <wirish_debug.h>
-#include <wirish_math.h>
 #include <wirish_time.h>
 #include <wirish_constants.h>
-#include <wiring_pulse.h>
+
 
 #if STM32_MCU_SERIES == STM32_SERIES_F1 /* FIXME [0.0.13?] port to F2 */
 //#include <HardwareSPI.h>
 #endif
 
+
+#ifdef __cplusplus
+#include <ext_interrupts.h>
+#include <wirish_math.h>
+#include <wiring_pulse.h>
 #include <HardwareSerial.h>
 #include <HardwareTimer.h>
 #include <usb_serial.h>
-#include <wirish_types.h>
-
-#include <libmaple/libmaple.h>
-
-#include <stdint.h>
-
 #include <WCharacter.h>
-#include <tone.h>
+#endif
+
+#include <wirish_types.h>
+#include <libmaple/libmaple.h>
+#include <stdint.h>
+//#include <tone.h> //???
 
 typedef unsigned int word;
 // typedef uint16 word;// definition from Arduino website, now appears to be incorrect for 32 bit devices
 
 /* Wiring macros and bit defines */
-
-#define true 0x1
-#define false 0x0
 
 #define lowByte(w)                     ((w) & 0xFF)
 #define highByte(w)                    (((w) >> 8) & 0xFF)
