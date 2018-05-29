@@ -32,6 +32,10 @@
 #ifndef _WIRISH_PWM_H_
 #define _WIRISH_PWM_H_
 
+
+#ifdef __cplusplus
+extern "C"{
+#endif
 #include <libmaple/libmaple_types.h>
 
 /**
@@ -55,5 +59,10 @@ void pwmWrite(uint8 pin, uint16 duty_cycle16);
  * @param duty_cycle Duty cycle to set. (Range is 0 to 255)
  */
 void analogWrite(uint8 pin, int duty_cycle8);
+
+#ifdef __cplusplus
+}
+#endif
+
 #endif
 
