@@ -32,6 +32,10 @@
 #ifndef _WIRISH_WIRISH_DEBUG_H_
 #define _WIRISH_WIRISH_DEBUG_H_
 
+#ifdef __cplusplus
+extern "C"{
+#endif
+
 #include <libmaple/gpio.h>
 
 /**
@@ -53,5 +57,9 @@ void disableDebugPorts(void);
  * @see disableDebugPorts()
  */
 void enableDebugPorts(void);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif
