@@ -32,6 +32,11 @@
 #ifndef _WIRISH_IO_H_
 #define _WIRISH_IO_H_
 
+#ifdef __cplusplus
+extern "C"{
+#endif
+
+
 #include <libmaple/libmaple_types.h>
 #include <boards.h>
 
@@ -159,7 +164,12 @@ uint16 analogRead(uint8 pin);
  * @param value    Value to shift out
  */
 void shiftOut(uint8 dataPin, uint8 clockPin, uint8 bitOrder, uint8 value);
-
+    
 uint32 shiftIn( uint32 ulDataPin, uint32 ulClockPin, uint32 ulBitOrder );
+
+#ifdef __cplusplus
+}
+#endif
+
 
 #endif
