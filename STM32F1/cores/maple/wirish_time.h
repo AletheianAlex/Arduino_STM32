@@ -32,6 +32,10 @@
 #ifndef _WIRISH_WIRISH_TIME_H_
 #define _WIRISH_WIRISH_TIME_H_
 
+#ifdef __cplusplus
+extern "C"{
+#endif
+
 #include <libmaple/libmaple_types.h>
 #include <libmaple/systick.h>
 
@@ -93,5 +97,9 @@ void delay(unsigned long ms);
  * @see delay()
  */
 void delayMicroseconds(uint32 us);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif
